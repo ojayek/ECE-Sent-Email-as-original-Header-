@@ -1,0 +1,204 @@
+﻿@model Send_Email_Attachment_MVC.Models.MessageModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html  lang="en-ca">
+<head>
+
+    <link href="//db.onlinewebfonts.com/c/3671adca6f650c92b83f906e49656986?family=B+Nazanin" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ECE</title>
+    <style type="text/css">
+        body {
+            font-family: 'Times New Roman';
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+        <link rel="stylesheet" href="~/Content/animation.css"/>
+      
+
+
+
+        <header class="App-header">
+
+            <h1 class="App-title">مکاتبات خارج شرکت مشانیر</h1>
+             
+            <img id="spinning-circle" class="App-logo" src="~/images/logo.svg" alt="ECE Logo" />
+            
+        </header>
+        <style>
+
+
+
+              img {
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  width: 20%;
+              }
+
+              * {
+                  font-family: "B Nazanin";
+                  src: url("//db.onlinewebfonts.com/t/3671adca6f650c92b83f906e49656986.eot");
+                  src: url("//db.onlinewebfonts.com/t/3671adca6f650c92b83f906e49656986.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3671adca6f650c92b83f906e49656986.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3671adca6f650c92b83f906e49656986.woff") format("woff"), url("//db.onlinewebfonts.com/t/3671adca6f650c92b83f906e49656986.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3671adca6f650c92b83f906e49656986.svg#B Nazanin") format("svg");
+              }
+
+
+              .App-title {
+                  position: static;
+                  text-align: center;
+              }
+
+              .App {
+                  text-align: center;
+              }
+
+              body {
+                  margin: 10px;
+                  padding: 10px;
+                  font-family: B-Nazanin;
+              }
+
+
+              .App-header {
+                  background-color: cornflowerblue;
+                  height: 250px;
+                  padding: 20px;
+                  color: white;
+              }
+
+              header {
+                  display: block;
+              }
+
+              .App {
+                  text-align: center;
+              }
+
+              /*body {
+                  // margin: 0;
+                  // padding: 0;
+                  font-family: sans-serif;
+              }*/
+        </style>
+        //
+        //
+        //
+        //
+        // end of style
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+
+
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav"></ul>
+                </div>
+            </div>
+        </div>
+        <table border="0" cellpadding="0" cellspacing="0" id="example" class="display compact" style="width:100%">
+            <tr>
+                <td style="width: 80px">To:</td>
+                <td>@Html.TextBoxFor(m => m.To)</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Subject:</td>
+                <td>@Html.TextBoxFor(m => m.Subject)</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td valign="top">Body:</td>
+                <td>@Html.TextAreaFor(m => m.Body, new { @rows = 5, @cols = 25 })</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>File Attachment:</td>
+                <td><input type="file" name="Attachments" multiple="multiple" /></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Gmail Email:</td>
+                <td>@Html.TextBoxFor(m => m.Email)</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Gmail Password:</td>
+                <td>@Html.PasswordFor(m => m.Password)</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Send" /></td>
+            </tr>
+        </table>
+    }
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript">
+        var message = "@ViewBag.Message";
+        $(function () {
+            if (message != "") {
+                alert(message);
+            }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+
+    <footer>
+        <p>© 2020 - ECE Moshanir.Co</p>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
