@@ -4,12 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
-
 using System.IO;
 using System.Net;
 using System.Net.Mail;
-using SendGrid.Helpers.Mail;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
+
+
+
+
+
+//using SendGrid.Helpers.Mail;
 
 namespace Send_Email_Attachment_MVC.Controllers
 {
@@ -38,12 +43,15 @@ namespace Send_Email_Attachment_MVC.Controllers
                 }
                 mm.IsBodyHtml = false;
                 SmtpClient smtp = new SmtpClient();
-                smtp.Host = "smtp.gmail.com";
+                smtp.Host = "webmail.moshanir.co";
                 smtp.EnableSsl = true;
                 NetworkCredential NetworkCred = new NetworkCredential(model.Email, model.Password);
+                smtp.EnableSsl = true;
+
+                ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate,X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
                 smtp.UseDefaultCredentials = true;
                 smtp.Credentials = NetworkCred;
-                smtp.Port = 587;
+                smtp.Port = 25;
                 mm.Headers.Add("X-ECE_send", "1.01");
                 smtp.Send(mm);
                 ViewBag.Message = "ایمیل ECE ارسال شد";

@@ -11,7 +11,7 @@
 
     <link href="//db.onlinewebfonts.com/c/3671adca6f650c92b83f906e49656986?family=B+Nazanin" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width" />
-    <title>ECE</title>
+    <title>ECE Moshanir.co</title>
     <style type="text/css">
         body {
             font-family: 'Times New Roman';
@@ -24,68 +24,64 @@
     {
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
-        <link rel="stylesheet" href="~/Content/animation.css"/>
-      
-
-
-
+        <link rel="stylesheet" href="~/Content/animation.css" />
+        //<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <header class="App-header">
 
-            <h1 class="App-title">مکاتبات خارج شرکت مشانیر</h1>
-             
-            <img id="spinning-circle" class="App-logo" src="~/images/logo.svg" alt="ECE Logo" />
-            
+            <h1 class="App-title">مکاتبات خارج شرکت مشانیر </h1>
+
+            <img class="App-logo" id="spinning-circle" src="~/images/moshanir.png" alt="ECE Logo" />
+
         </header>
         <style>
 
 
 
-              img {
-                  display: block;
-                  margin-left: auto;
-                  margin-right: auto;
-                  width: 20%;
-              }
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 40%;
+            }
 
-              * {
-                  font-family: "B Nazanin";
-                  src: url("//db.onlinewebfonts.com/t/3671adca6f650c92b83f906e49656986.eot");
-                  src: url("//db.onlinewebfonts.com/t/3671adca6f650c92b83f906e49656986.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3671adca6f650c92b83f906e49656986.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3671adca6f650c92b83f906e49656986.woff") format("woff"), url("//db.onlinewebfonts.com/t/3671adca6f650c92b83f906e49656986.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3671adca6f650c92b83f906e49656986.svg#B Nazanin") format("svg");
-              }
-
-
-              .App-title {
-                  position: static;
-                  text-align: center;
-              }
-
-              .App {
-                  text-align: center;
-              }
-
-              body {
-                  margin: 10px;
-                  padding: 10px;
-                  font-family: B-Nazanin;
-              }
+            * {
+                font-family: "B Nazanin";
+                
+            }
 
 
-              .App-header {
-                  background-color: cornflowerblue;
-                  height: 250px;
-                  padding: 20px;
-                  color: white;
-              }
+            .App-title {
+                position: static;
+                text-align: center;
+            }
 
-              header {
-                  display: block;
-              }
+            .App {
+                text-align: center;
+            }
 
-              .App {
-                  text-align: center;
-              }
+            body {
+                margin: 10px;
+                padding: 10px;
+                font-family: B-Nazanin;
+            }
 
-              /*body {
+
+            .App-header {
+                background-color: cornflowerblue;
+                height: 250px;
+                padding: 20px;
+                color: white;
+            }
+
+            header {
+                display: block;
+            }
+
+            .App {
+                text-align: center;
+            }
+
+            /*body {
                   // margin: 0;
                   // padding: 0;
                   font-family: sans-serif;
@@ -108,63 +104,126 @@
                 </div>
             </div>
         </div>
-        <table border="0" cellpadding="0" cellspacing="0" id="example" class="display compact" style="width:100%">
-            <tr>
-                <td style="width: 80px">To:</td>
-                <td>@Html.TextBoxFor(m => m.To)</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>Subject:</td>
-                <td>@Html.TextBoxFor(m => m.Subject)</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td valign="top">Body:</td>
-                <td>@Html.TextAreaFor(m => m.Body, new { @rows = 5, @cols = 25 })</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>File Attachment:</td>
-                <td><input type="file" name="Attachments" multiple="multiple" /></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>Gmail Email:</td>
-                <td>@Html.TextBoxFor(m => m.Email)</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>Gmail Password:</td>
-                <td>@Html.PasswordFor(m => m.Password)</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Send" /></td>
-            </tr>
+        <table border="0" cellpadding="0" cellspacing="0" id="example" class="display compact" style="width:95%">
+            @*<tr>
+                    <td style="width: 80px">To:</td>
+                    <td>@Html.TextBoxFor(m => m.To)</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Subject:</td>
+                    <td>@Html.TextBoxFor(m => m.Subject)</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td valign="top">Body:</td>
+                    <td>@Html.TextAreaFor(m => m.Body, new { @rows = 5, @cols = 25 })</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>File Attachment:</td>
+                    <td><input type="file" name="Attachments" multiple="multiple" /></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Gmail Email:</td>
+                    <td>@Html.TextBoxFor(m => m.Email)</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Gmail Password:</td>
+                    <td>@Html.PasswordFor(m => m.Password)</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Send" /></td>
+                </tr>*@
+
+            <thead>
+                <tr>
+                    <th class="th-sm">
+                        دریافت کننده:
+                    </th>
+                    <th class="th-sm">
+                        موضوع نامه:
+                    </th>
+                    <th class="th-sm">
+                        متن نامه:
+                    </th>
+                    <th class="th-sm">
+                        فایل های ضمیمه:
+                    </th>
+                    <th class="th-sm">
+                        ایمیل:
+                    </th>
+                    <th class="th-sm">
+                        گذرواژه:
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Html.TextBoxFor(m => m.To)</td>
+                    <td>@Html.TextBoxFor(m => m.Subject)</td>
+                    <td>@Html.TextAreaFor(m => m.Body, new { @rows = 1, @cols = 35 })</td>
+                    <td><input type="file" name="Attachments" multiple="multiple" /></td>
+                    <td>@Html.TextBoxFor(m => m.Email)</td>
+                    <td>@Html.PasswordFor(m => m.Password)</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" value="ارسال" /></td>
+                   
+                </tr>
+
+            </tbody>
+
         </table>
+
+
     }
+
+
     <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
     <script type="text/javascript">
-        var message = "@ViewBag.Message";
+       var message = "@ViewBag.Message";
         $(function () {
             if (message != "") {
-                alert(message);
+                Swal.fire(
+               '^  Good job  ^',
+               'You send ECE !',
+               'success'
+                )
+  //            Swal.fire({
+  //             title: 'ECE sent successfully!',
+  //             width: 600,
+  //             padding: '3em',
+  //             background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
+  //             backdrop: `
+  //             rgba(0,0,123,0.4)
+  //             url("https://sweetalert2.github.io/images/nyan-cat.gif")
+  //             left top
+  //             no-repeat
+  //`
+
             }
         });
+
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -174,16 +233,25 @@
 
         $(document).ready(function () {
             $('#example').DataTable();
+            //$('.dataTables_length').addClass('bs-select');
         });
 
 
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
+   
 
 
     <footer>
-        <p>© 2020 - ECE Moshanir.Co</p>
+        <p>© 2020 - ECE Moshanir.Co &#128512  &#x1F4E7</p>
+        <p>
+            تاریخ امروز : @DateTime.Now
+        </p>
     </footer>
 
 
